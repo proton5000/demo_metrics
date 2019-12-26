@@ -13,9 +13,9 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     environment:
-      - GF_AWS_PROFILES: default
-      - GF_AWS_default_ACCESS_KEY_ID: <YOUR_ACCESS_KEY_ID>
-      - GF_AWS_default_SECRET_ACCESS_KEY: <YOUR_SECRET_ACCESS_KEY>
-      - GF_AWS_default_REGION: eu-central-1
+      GF_AWS_PROFILES: default
+      GF_AWS_default_ACCESS_KEY_ID: <YOUR_ACCESS_KEY_ID>
+      GF_AWS_default_SECRET_ACCESS_KEY: <YOUR_SECRET_ACCESS_KEY>
+      GF_AWS_default_REGION: <YOUR_REGION>
     ports:
       - 3000:3000
