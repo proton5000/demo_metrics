@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.7'
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -12,12 +12,10 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
+    environment:
+      - GF_AWS_PROFILES: default
+      - GF_AWS_default_ACCESS_KEY_ID: <YOUR_ACCESS_KEY_ID>
+      - GF_AWS_default_SECRET_ACCESS_KEY: <YOUR_SECRET_ACCESS_KEY>
+      - GF_AWS_default_REGION: eu-central-1
     ports:
       - 3000:3000
-  demoapp:
-    build:
-      context: .
-      dockerfile: Dockerfile-demoapp
-    container_name: demoapp
-    ports:
-      - 8080:8080
