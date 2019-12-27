@@ -12,7 +12,7 @@ namespace "gateway" {
 
   source = {
     files = [
-        "/var/log/nginx/access.log"
+        "/var/log/nginx/gateway.log"
       ]
   }
 

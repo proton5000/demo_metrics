@@ -1,0 +1,25 @@
+listen {
+  port = 4040
+}
+
+consul {
+  enable = false
+}
+
+namespace "gateway" {
+
+  source {
+    syslog {
+      listen_address = "udp://0.0.0.0:8514"
+      format = "auto"
+      tags = ["nginx"]
+    }
+  }
+
+  labels {
+    app = "Bank Connector"
+    env = "Proxy"
+  }
+
+  histogram_buckets = [.005, .01, .025, .05, .1, .25, .5, 1, 2.5, 5, 10]
+}
