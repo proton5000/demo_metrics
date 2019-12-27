@@ -19,25 +19,13 @@ services:
       GF_AWS_default_REGION: <YOUR_REGION>
     ports:
       - 3000:3000
-  nginx-proxy:
-    image: nginx:stable-alpine
-    container_name: nginx-proxy
+  nginx-proxy-exporter:
+    build: nginx-prometheus
+    container_name: nginx-proxy-exporter
     volumes:
       - ./nginx-prometheus/gateway.conf:/etc/nginx/conf.d/default.conf
-      - nginx-logs:/var/log/nginx
+      - ./nginx-prometheus/gateway.hcl:/etc/prometheus-nginxlog-exporter.hcl
     ports:
       - 9000:80
-  nginx-exporter:
-    image: quay.io/martinhelmich/prometheus-nginxlog-exporter
-    container_name: nginx-exporter
-    volumes:
-      - ./nginx-prometheus/gateway.hcl:/etc/prometheus-nginxlog-exporter.hcl
-      - nginx-logs:/var/log/nginx
-    command: ["-config-file", "/etc/prometheus-nginxlog-exporter.hcl"]
-    ports:
       - 4040:4040
-    depends_on:
-      - nginx-proxy
 
-volumes:
-  nginx-logs:
