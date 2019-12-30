@@ -24,8 +24,10 @@ services:
     container_name: nginx-proxy-exporter
     volumes:
       - ./nginx-prometheus/gateway.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx-prometheus/gateway.hcl:/etc/prometheus-nginxlog-exporter.hcl
+#      - ./nginx-prometheus/gateway.hcl:/etc/prometheus-nginxlog-exporter.hcl
     ports:
       - 9000:80
-      - 4040:4040
+      - 4040:24231
+      - 9080:9090
+
 
