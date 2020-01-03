@@ -16,8 +16,7 @@
   "editable": true,
   "gnetId": 650,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1577478767269,
+  "iteration": 1578052169088,
   "links": [],
   "panels": [
     {
@@ -146,11 +145,11 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "request total",
+          "alias": "request total number",
           "color": "#5794F2"
         },
         {
-          "alias": "request error",
+          "alias": "request error number",
           "color": "#F2495C"
         }
       ],
@@ -159,7 +158,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "request total",
+          "alias": "request total number",
           "application": {
             "filter": ""
           },
@@ -195,7 +194,7 @@
           ]
         },
         {
-          "alias": "request error",
+          "alias": "request error number",
           "application": {
             "filter": ""
           },
@@ -517,5 +516,5 @@
   "timezone": "browser",
   "title": "AWS load balancer metrics",
   "uid": "bt8qGKJZz",
-  "version": 8
+  "version": 2
 }

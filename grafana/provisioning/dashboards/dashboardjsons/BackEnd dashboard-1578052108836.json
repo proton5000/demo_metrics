@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 2,
   "links": [
     {
       "icon": "info",
@@ -80,11 +79,11 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
-          "alias": "request total",
+          "alias": "request total number",
           "color": "#5794F2"
         },
         {
-          "alias": "request error",
+          "alias": "request error number",
           "color": "#F2495C"
         }
       ],
@@ -94,18 +93,18 @@
       "targets": [
         {
           "expr": "sum(nginx_proxy_request_duration_milliseconds_count)",
-          "legendFormat": "request total",
+          "legendFormat": "request total number",
           "refId": "A"
         },
         {
           "expr": "nginx_proxy_request_duration_milliseconds_count{status=~\"5..\"}",
-          "legendFormat": "request error",
+          "legendFormat": "request error number",
           "refId": "B"
         },
         {
           "expr": "nginx_proxy_request_duration_milliseconds_count{status=~\"4..\"}",
           "hide": false,
-          "legendFormat": "request error",
+          "legendFormat": "request error number",
           "refId": "D"
         }
       ],
@@ -113,7 +112,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "BeckEnd responses (nginx)",
+      "title": "Requests",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -190,5 +189,5 @@
   "timezone": "browser",
   "title": "BackEnd dashboard",
   "uid": "LqSovIYWk",
-  "version": 10
+  "version": 2
 }
