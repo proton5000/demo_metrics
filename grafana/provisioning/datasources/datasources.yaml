@@ -14,5 +14,5 @@ datasources:
       authType: keys
       defaultRegion: eu-central-1
     secureJsonData:
-      accessKey: AKIAQ5SSLGXDU2TZ24K2
-      secretKey: MP5N/PwxEWZpDJXhLg9v3U1ub6En+syQT+ts2Qt8
+      accessKey: <your_access_key>
+      secretKey: <your_secret_key>
